@@ -10,6 +10,10 @@ Both are available in this Go module, which can be installed with:
 go get -u github.com/asg017/sqlite-vec-go-bindings
 ```
 
+## dcosson forked updates
+
+I forked this library just to include the sqlite headers (the slightly modified version, copied from https://github.com/mattn/go-sqlite3 ./sqlite3-binding.h and renamed here to ./cgo/sqlite3.h). This ensures we're building against the same version of the core sqlite library being used, and prevents building against the MacOS included header which outputs a scary deprecation warning on every build.
+
 ## CGO Bindings
 
 For most SQLite Go libraries that use CGO, like [`mattn/go-sqlite3`](https://github.com/mattn/go-sqlite3), use the CGO portion of this Go module. It will compile the `sqlite-vec` libary from source and embed into your application.
